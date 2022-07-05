@@ -6,9 +6,9 @@
     ========================
 
     @file      : SecurityInspector.js
-    @version   : 1.0.2
+    @version   : 1.0.3
     @author    : A Ramlawi
-    @date      : 2021-04-02
+    @date      : 2022-07-05
     @copyright : TimeSeries
     @license   : Apache 2
 
@@ -63,9 +63,10 @@ define([
 
             for (key in objectsJSON) {
                 if (objectsJSON.hasOwnProperty(key)) {
-                    if (objectsJSON[key].isPersistable()) {
+                    // isPersistable() is no longer available in mx9 on the metaobject
+                    //if (objectsJSON[key].isPersistable()) {
                         entityList.push(Array.of(key));
-                    }
+                    //}
                 }
             }
 
